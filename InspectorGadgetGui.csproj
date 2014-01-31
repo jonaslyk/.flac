@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C87BE90F-3D94-4BBA-80EA-EB8DA4C106EA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InspectorGadgetGui</RootNamespace>
+    <AssemblyName>InspectorGadgetGui</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>InspectorGadgetGui.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8BB06668C3810E587407361377953E27E8F937D3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>InspectorGadgetGui_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExecutionResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecutionResultsForm.Designer.cs">
+      <DependentUpon>ExecutionResultsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SizeablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\stackPivot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\stackPivot.Designer.cs">
+      <DependentUpon>stackPivot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\stackListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\stackListView.Designer.cs">
+      <DependentUpon>stackListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\extendedListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\extendedListView.Designer.cs">
+      <DependentUpon>extendedListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\HexBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\HexBox.designer.cs">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\OperationSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\OperationSelector.Designer.cs">
+      <DependentUpon>OperationSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\baseOpenrationInputControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\BasicOneRegisterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\BasicThreeRegistersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\BasicThreeRegistersControl.Designer.cs">
+      <DependentUpon>BasicThreeRegistersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\BasicTwoRegistersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\BasicTwoRegistersControl.Designer.cs">
+      <DependentUpon>BasicTwoRegistersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\DecreaseRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\IncreaseRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\AddRegisters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\AddValueToRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\AndRegisters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\APISearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\APISearch.Designer.cs">
+      <DependentUpon>APISearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\ClearRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\DereferenceRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\FreeText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\FreeText.Designer.cs">
+      <DependentUpon>FreeText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\IncRegister1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\MoveRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\moveRegToDereferencedRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\NegateRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\OrRegisters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\PopRegisters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\PopRegisters.Designer.cs">
+      <DependentUpon>PopRegisters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\popWithDereference.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\popWithDereference.Designer.cs">
+      <DependentUpon>popWithDereference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\PushRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\SubRegister1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\SubtractRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\SubtractRegister.Designer.cs">
+      <DependentUpon>SubtractRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\SwapRegisters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\XORRegisters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\EmptySearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\EmptySearchControl.Designer.cs">
+      <DependentUpon>EmptySearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\MultiplyFunctionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\ConcreteInputcontrols\SubtractValueFromRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OperationInput\operations\TextSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SortingSequenceSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SortingSequenceSelector.designer.cs">
+      <DependentUpon>SortingSequenceSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memoryInspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memoryInspectorForm.Designer.cs">
+      <DependentUpon>memoryInspectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessCommunicator.cs" />
+    <Compile Include="WaitBuildDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitBuildDatabaseForm.Designer.cs">
+      <DependentUpon>WaitBuildDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CyclicPatternForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CyclicPatternForm.Designer.cs">
+      <DependentUpon>CyclicPatternForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMemoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMemoryForm.Designer.cs">
+      <DependentUpon>EditMemoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutionStepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecutionStepForm.Designer.cs">
+      <DependentUpon>ExecutionStepForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGadgetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchGadgetForm.Designer.cs">
+      <DependentUpon>SearchGadgetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectMemoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectMemoryForm.Designer.cs">
+      <DependentUpon>SelectMemoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="WaitPatternScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitPatternScanForm.Designer.cs">
+      <DependentUpon>WaitPatternScanForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ExecutionResultsForm.resx">
+      <DependentUpon>ExecutionResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\ConcreteInputcontrols\stackPivot.resx">
+      <DependentUpon>stackPivot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\stackListView.resx">
+      <DependentUpon>stackListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\extendedListView.resx">
+      <DependentUpon>extendedListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HexBox.resx">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\OperationSelector.resx">
+      <DependentUpon>OperationSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\BasicOneRegisterControl.resx">
+      <DependentUpon>BasicOneRegisterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\BasicThreeRegistersControl.resx">
+      <DependentUpon>BasicThreeRegistersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\BasicTwoRegistersControl.resx">
+      <DependentUpon>BasicTwoRegistersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\ConcreteInputcontrols\PushRegister.resx">
+      <DependentUpon>PushRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\MultiplyFunctionControl.resx">
+      <DependentUpon>MultiplyFunctionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OperationInput\operations\TextSearchControl.resx">
+      <DependentUpon>TextSearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SortingSequenceSelector.resx">
+      <DependentUpon>SortingSequenceSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memoryInspectorForm.resx">
+      <DependentUpon>memoryInspectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitBuildDatabaseForm.resx">
+      <DependentUpon>WaitBuildDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CyclicPatternForm.resx">
+      <DependentUpon>CyclicPatternForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMemoryForm.resx">
+      <DependentUpon>EditMemoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecutionStepForm.resx">
+      <DependentUpon>ExecutionStepForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchGadgetForm.resx">
+      <DependentUpon>SearchGadgetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectMemoryForm.resx">
+      <DependentUpon>SelectMemoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WaitPatternScanForm.resx">
+      <DependentUpon>WaitPatternScanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="InspectorGadgetGui_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons-Land-Play-Stop-Pause-Play-Normal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1365963974_40719.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1365964008_40719.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1365964065_40719.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-go-first-view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\plius3.png" />
+    <None Include="Resources\plius2.png" />
+    <None Include="Resources\autoHideOn.png" />
+    <None Include="Resources\autoHideOff.png" />
+    <None Include="Resources\autohide1.png" />
+    <None Include="Resources\autohide.png" />
+    <None Include="Resources\minus1.png" />
+    <None Include="Resources\plius1.png" />
+    <None Include="Resources\plius.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\forward.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
